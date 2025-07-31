@@ -1,37 +1,40 @@
+// src/index.js
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
+const helmet = require('helmet');
+const morgan = require('morgan');
 
 const userRoutes = require('./src/routes/userRoutes');
+const pool = require('./src/config/db'); // To ensure DB connection works on start
 
 const app = express();
 
 // Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(cors()); // Enable CORS for frontend
+app.use(helmet()); // Secure headers
+app.use(express.json()); // Parse JSON bodies
+app.use(morgan('dev')); // Logging requests
 
 // Routes
 app.use('/api/users', userRoutes);
 
-// Health check endpoint
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Server is running' });
+// Root route
+app.get('/', (req, res) => {
+  res.send('API is running');
 });
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
+// Check DB Connection at startup
+pool.query('SELECT NOW()', (err, result) => {
+  if (err) {
+    console.error('❌ Database connection failed:', err);
+  } else {
+    console.log('✅ Database connected:', result.rows[0]);
+  }
 });
 
-// 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({ error: 'Route not found' });
-});
-
-const PORT = process.env.PORT || 3000;
-
+// Start server
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-}); 
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
