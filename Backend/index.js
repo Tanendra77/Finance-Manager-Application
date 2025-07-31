@@ -5,7 +5,12 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 
-const userRoutes = require('./src/routes/userRoutes');
+const userRoutes = require('./src/routes/userRoutes');// User authentication routes
+const catagoryRoutes = require('./src/routes/catagoryRoutes');// catagory management routes
+const transactionRoutes = require('./src/routes/transactionRoutes');// Transaction management routes
+const recurringRoutes = require('./src/routes/recurringRoutes');// Recurring transactions routes
+const budgetRoutes = require('./src/routes/budgetRoutes');// Budget management routes
+
 const pool = require('./src/config/db'); // To ensure DB connection works on start
 
 const app = express();
@@ -18,6 +23,10 @@ app.use(morgan('dev')); // Logging requests
 
 // Routes
 app.use('/api/users', userRoutes);
+app.use('/api/catagorys', catagoryRoutes);
+app.use('/api/transactions', transactionRoutes);
+app.use('/api/recurring-transactions', recurringRoutes);
+app.use('/api/budgets', budgetRoutes);
 
 // Root route
 app.get('/', (req, res) => {
