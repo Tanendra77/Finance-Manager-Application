@@ -29,4 +29,3 @@ async function sendOTPEmail(recipientEmail, otp) {
 }
 
 module.exports = { sendOTPEmail };
-sendOTPEmail("siddhesh.paithankar@mitaoe.ac.in", "123456"); 
