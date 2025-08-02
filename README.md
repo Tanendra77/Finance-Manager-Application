@@ -1,5 +1,16 @@
 # Finance Manager Application
 
+[![Node.js Version](https://img.shields.io/badge/Node.js-18%2B-green)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-Web%20Framework-000000)](https://expressjs.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)](https://www.postgresql.org/)
+[![JWT](https://img.shields.io/badge/JWT-Authentication-000000)](https://jwt.io/)
+[![Passport.js](https://img.shields.io/badge/Passport.js-OAuth-34E27A)](https://passportjs.org/)
+[![Multer](https://img.shields.io/badge/Multer-File%20Upload-FF6B6B)](https://github.com/expressjs/multer)
+[![Helmet](https://img.shields.io/badge/Helmet-Security-000000)](https://helmetjs.github.io/)
+[![Morgan](https://img.shields.io/badge/Morgan-Logging-000000)](https://github.com/expressjs/morgan)
+[![Bcrypt](https://img.shields.io/badge/Bcrypt-Password%20Hashing-000000)](https://github.com/dcodeIO/bcrypt.js/)
+[![Node-cron](https://img.shields.io/badge/Node--cron-Scheduled%20Jobs-000000)](https://github.com/node-cron/node-cron)
+
 A comprehensive personal finance management application with a Node.js/Express backend and modern frontend interface.
 
 ## 🚀 Features
