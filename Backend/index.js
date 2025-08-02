@@ -20,7 +20,7 @@ const pool = require('./src/config/db'); // DB connection
 
 const app = express(); 
 
-// Serve static files (Recipt uploads folder)
+// Serve static files (Receipt uploads folder)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Middleware
@@ -33,7 +33,7 @@ app.use(passport.initialize());  // Initialize passport
 // Routes
 app.use('/api/users', userRoutes);               // Login/Register
 app.use('/api/auth', authRoutes);                 // Google authentication
-app.use('/api/categories', categoryRoutes);       // Category management (typo: consider changing 'catagorys' to 'categories')
+app.use('/api/categories', categoryRoutes);       // Category management 
 app.use('/api/transactions', transactionRoutes); // Transaction management
 app.use('/api/recurring-transactions', recurringRoutes); // Recurring transactions management
 app.use('/api/budgets', budgetRoutes);           // Budget management
