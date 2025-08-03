@@ -1,0 +1,6 @@
+/* Sidebar active tab styling */
+.sidebar-active {
+  background-color: rgba(96, 65, 191, 0.1);
+  color: #6041bf;
+  border-right: 2px solid #6041bf;
+} 

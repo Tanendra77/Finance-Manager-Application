@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import logo from '../assets/FroggyWalletLogo.png';
+import LoginForm from './LoginForm';
+import '../css/Navbar.css';
 
 const Navbar = ({ onMenuClick, sidebarOpen }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showLoginForm, setShowLoginForm] = useState(false);
   const [userProfile] = useState({
     name: 'John Doe',
     email: 'john@example.com',
@@ -16,7 +19,11 @@ const Navbar = ({ onMenuClick, sidebarOpen }) => {
   };
 
   const handleLogin = () => {
-    console.log('Login clicked');
+    setShowLoginForm(true);
+  };
+
+  const handleCloseLoginForm = () => {
+    setShowLoginForm(false);
   };
 
   return (
@@ -92,6 +99,7 @@ const Navbar = ({ onMenuClick, sidebarOpen }) => {
           </div>
         </div>
       </div>
+      <LoginForm isOpen={showLoginForm} onClose={handleCloseLoginForm} />
     </nav>
   );
 };

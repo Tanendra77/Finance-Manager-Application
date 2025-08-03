@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/Sidebar.css';
 
 const Sidebar = ({ isOpen, currentPage, onPageChange }) => {
   const navigationItems = [
@@ -74,7 +75,7 @@ const Sidebar = ({ isOpen, currentPage, onPageChange }) => {
               onClick={() => onPageChange(item.id)}
               className={`w-full flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-200 ${
                 currentPage === item.id
-                  ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700'
+                  ? 'sidebar-active'
                   : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
               }`}
             >

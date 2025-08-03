@@ -1,0 +1,41 @@
+.App {
+  text-align: left;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* main content styling */
+main {
+  min-height: calc(100vh - 64px);
+  background-color: #f8fafc;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  main {
+    margin-left: 0 !important;
+  }
+}
+
+/* Smooth transitions for sidebar */
+.sidebar-transition {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+} 
